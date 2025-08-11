@@ -10,8 +10,11 @@ const postsApi = createApi({
     getAllPosts: buider.query({
       query: () => "/posts",
     }),
+    getpostById: buider.query({
+      query: (id) => `/posts/${id}`
+    })
   }),
 });
 
-export const { useGetAllPostsQuery } = postsApi;
+export const { useGetAllPostsQuery, useGetpostByIdQuery } = postsApi;
 export default postsApi;
