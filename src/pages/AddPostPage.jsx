@@ -22,7 +22,7 @@ const AddPostPage = () => {
     };
     await addNewPost(newPost)
   };
-  console.log(addNewPost);
+  
 
   return (
     <div className="p-5 shadow-md rounded-lg max-w-md ">
