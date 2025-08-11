@@ -6,15 +6,22 @@ const postsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com",
   }),
-  endpoints: (buider) => ({
-    getAllPosts: buider.query({
+  endpoints: (builder) => ({
+    getAllPosts: builder.query({
       query: () => "/posts",
     }),
-    getpostById: buider.query({
-      query: (id) => `/posts/${id}`
-    })
+    getPostById: builder.query({
+      query: (id) => `/posts/${id}`,
+    }),
+    addNewPost: builder.mutation({
+      query: (data) => ({
+        url: "/posts",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
-export const { useGetAllPostsQuery, useGetpostByIdQuery } = postsApi;
+export const { useGetAllPostsQuery, useGetPostByIdQuery, useAddNewPostMutation} = postsApi;
 export default postsApi;

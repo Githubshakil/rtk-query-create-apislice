@@ -6,6 +6,7 @@ import store from "./redux/store.js";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home.jsx";
 import Blogs from "./pages/Blogs.jsx";
+import AddPostPage from "./pages/AddPostPage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")).render(
       <Route element={<App/>}>
         <Route path="/" element={<Home/>}/>
         <Route path="/blogs/:id" element={<Blogs/>}/>
+        <Route path="/add-post" element={<AddPostPage/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

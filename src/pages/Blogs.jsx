@@ -1,11 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import { useGetpostByIdQuery } from '../redux/services/posts/postApi'
+import { useGetPostByIdQuery } from '../redux/services/posts/postApi'
+
 
 const Blogs = () => {
     const {id} = useParams()
     console.log(id)
-    const {data,isLoading,error} = useGetpostByIdQuery(id)
+    const {data,isLoading,error} = useGetPostByIdQuery(id)
     console.log(data)
     if(error) return <div>Somthing Went Wrong!</div>
     if(isLoading) return <div>Loading...</div>
