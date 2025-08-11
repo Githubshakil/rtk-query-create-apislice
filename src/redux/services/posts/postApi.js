@@ -15,11 +15,12 @@ const postsApi = createApi({
     }),
     addNewPost: builder.mutation({
       query: (data) => ({
-        url: "/posts",
+        url: '/posts',
         method: "POST",
-        body: data,
-      }),
-    }),
+        body: data
+      })
+    })
+    
   }),
 });
 

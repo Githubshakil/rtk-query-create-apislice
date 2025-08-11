@@ -12,7 +12,7 @@ const Home = () => {
     <>
     <div>
         <ul className=' text-gray-900 text-sm font-semibold max-w-120 mt-4 border border-gray-400 shadow-lg p-5 container max-h-screen mx-auto'>
-          {data.slice(0,60).map((post, id) => (
+          {data.slice(0,10).map((post, id) => (
             <li key={id} className='mb-2 '>
               <Link to={`/blogs/${post.id}`} className='flex justify-start capitalize'>
               <span className='text-xl font-bold text-gray-600 mr-2'>{post.id}.</span>

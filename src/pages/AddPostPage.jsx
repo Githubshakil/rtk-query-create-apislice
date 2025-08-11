@@ -2,17 +2,19 @@ import { useState } from "react";
 import { useAddNewPostMutation } from "../redux/services/posts/postApi";
 
 
+
 const AddPostPage = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [userId, setUserId] = useState("");
 
-  const [addNewPost] = useAddNewPostMutation();
-  console.log(addNewPost);
 
+  const [addNewPost] = useAddNewPostMutation()
+ 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     const newPost = {
       title,
       body,
@@ -20,6 +22,7 @@ const AddPostPage = () => {
     };
     await addNewPost(newPost)
   };
+  console.log(addNewPost);
 
   return (
     <div className="p-5 shadow-md rounded-lg max-w-md ">
