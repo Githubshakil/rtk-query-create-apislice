@@ -15,14 +15,32 @@ const postsApi = createApi({
     }),
     addNewPost: builder.mutation({
       query: (data) => ({
-        url: '/posts',
+        url: "/posts",
         method: "POST",
+        body: data,
+      }),
+    }),
+    deletePostById: builder.mutation({
+      query: (id) => ({
+        url: `/posts/${id}`,
+        method: "DELETE",
+      }),
+    }),
+    updatePostById: builder.mutation({
+      query: ({id,data}) =>({
+        url: `/posts/${id}`,
+        method: "PUT",
         body: data
       })
     })
-    
   }),
 });
 
-export const { useGetAllPostsQuery, useGetPostByIdQuery, useAddNewPostMutation} = postsApi;
+export const {
+  useGetAllPostsQuery,
+  useGetPostByIdQuery,
+  useAddNewPostMutation,
+  useDeletePostByIdMutation,
+  useUpdatePostByIdMutation
+} = postsApi;
 export default postsApi;
